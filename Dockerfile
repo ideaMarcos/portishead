@@ -27,7 +27,14 @@ ENV HOME=/opt/app/
 
 WORKDIR $HOME
 
-RUN apk add --no-cache --update openssl ncurses 
+RUN \
+    apk update && \
+    apk --no-cache --update add \
+    ncurses \
+    openssl \
+    postgresql-client && \
+    rm -rf /var/cache/apk/*
+
 
 COPY --from=build ${HOME}build $HOME
 RUN chown -R nobody: $HOME

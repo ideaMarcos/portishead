@@ -6,7 +6,7 @@ defmodule PortisheadWeb.Router do
     plug :fetch_session
     plug :fetch_flash
     plug :protect_from_forgery
-    plug :put_secure_browser_headers
+    plug PortisheadWeb.SecureBrowserHeaders
   end
 
   pipeline :api do

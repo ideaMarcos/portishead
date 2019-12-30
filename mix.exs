@@ -5,7 +5,7 @@ defmodule Portishead.MixProject do
     [
       app: :portishead,
       version: "0.1.0",
-      elixir: "~> 1.5",
+      elixir: "~> 1.9",
       elixirc_paths: elixirc_paths(Mix.env()),
       compilers: [:phoenix, :gettext] ++ Mix.compilers(),
       start_permanent: Mix.env() == :prod,
@@ -59,7 +59,11 @@ defmodule Portishead.MixProject do
     [
       compile: ["compile --warnings-as-errors"],
       "ecto.migrate": ["ecto.migrate --log-sql"],
-      "ecto.setup": ["ecto.create", "ecto.migrate"],
+      "ecto.setup": [
+        "ecto.create",
+        "ecto.load --skip-if-loaded",
+        "ecto.migrate"
+      ],
       # "ecto.seed": ["run priv/repo/seeds.exs"],
       "ecto.reset": ["ecto.drop", "ecto.setup"],
       test: ["ecto.drop", "ecto.create --quiet", "ecto.migrate", "test"]

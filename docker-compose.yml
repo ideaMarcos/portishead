@@ -16,7 +16,7 @@ services:
     entrypoint:
       - /bin/sh
     command:
-      - ./migrateThenStart.sh
+      - ./migrate-then-start.sh
     environment:
       - PORT=4000
       - DB_USER=postgres
