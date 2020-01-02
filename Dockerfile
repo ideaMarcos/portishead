@@ -8,7 +8,7 @@ RUN mix do deps.get --only prod, deps.compile
 # Same with npm deps
 ADD assets/package.json assets/
 RUN cd assets && \
-    npm install --unsafe-perm -g elm@0.19.0-no-deps && \
+    # npm install --unsafe-perm -g elm@0.19.1 && \
     npm install
 
 # Run frontend build, compile, and digest assets
@@ -35,10 +35,12 @@ RUN \
     postgresql-client && \
     rm -rf /var/cache/apk/*
 
-
 COPY --from=build ${HOME}build $HOME
 RUN chown -R nobody: $HOME
 USER nobody
+
+HEALTHCHECK \
+    CMD curl -f http://localhost:${PORT}/ || exit 1
 
 ENTRYPOINT ["./bin/portishead"]
 CMD ["start"]
