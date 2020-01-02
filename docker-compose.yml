@@ -14,7 +14,8 @@ services:
     depends_on:
       - postgres
     entrypoint:
-      - /bin/sh
+      - tini
+      - -v
     command:
       - ./migrate-then-start.sh
     environment:

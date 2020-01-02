@@ -30,17 +30,19 @@ WORKDIR $HOME
 RUN \
     apk update && \
     apk --no-cache --update add \
+    curl \
     ncurses \
     openssl \
-    postgresql-client && \
-    rm -rf /var/cache/apk/*
+    postgresql-client \
+    tini
 
 COPY --from=build ${HOME}build $HOME
-RUN chown -R nobody: $HOME
+RUN chown -R nobody: $HOME && \
+    chmod +x $HOME/*.sh
 USER nobody
 
-HEALTHCHECK \
+HEALTHCHECK --interval=1m --timeout=2s \
     CMD curl -f http://localhost:${PORT}/ || exit 1
 
-ENTRYPOINT ["./bin/portishead"]
+ENTRYPOINT ["tini", "--", "./bin/portishead"]
 CMD ["start"]
