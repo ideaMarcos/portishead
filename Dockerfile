@@ -23,7 +23,7 @@ RUN cd assets/ && \
 
 
 FROM alpine:latest
-ENV HOME=/opt/app/
+ENV HOME=/opt/app
 
 WORKDIR $HOME
 
@@ -36,7 +36,7 @@ RUN \
     postgresql-client \
     tini
 
-COPY --from=build ${HOME}build $HOME
+COPY --from=build $HOME/build $HOME
 RUN chown -R nobody: $HOME && \
     chmod +x $HOME/*.sh
 USER nobody
