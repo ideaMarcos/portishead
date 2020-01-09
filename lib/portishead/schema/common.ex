@@ -14,6 +14,7 @@ defmodule PortisheadService.Schema.Common do
   # https://stackoverflow.com/questions/52677855/call-a-custom-macro-in-an-ecto-schema-block
   defmacro common_fields do
     quote do
+      # field :created_at, :utc_datetime_usec, autogenerate: {Ecto.Schema, DateTime.utc_now(), []}
       field :some_field, :string
     end
   end
