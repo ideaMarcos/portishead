@@ -60,8 +60,8 @@ config :portishead, PortisheadWeb.Endpoint,
     patterns: [
       ~r"priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$",
       ~r"priv/gettext/.*(po)$",
-      ~r"lib/portishead_web/{live,views}/.*(ex)$",
-      ~r"lib/portishead_web/templates/.*(eex)$"
+      ~r"lib/web/{live,views}/.*(ex)$",
+      ~r"lib/web/templates/.*(eex)$"
     ]
   ]
 

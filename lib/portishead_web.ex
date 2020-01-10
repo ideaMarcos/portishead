@@ -30,7 +30,7 @@ defmodule PortisheadWeb do
   def view do
     quote do
       use Phoenix.View,
-        root: "lib/portishead_web/templates",
+        root: "lib/web/templates",
         namespace: PortisheadWeb
 
       # Import convenience functions from controllers
