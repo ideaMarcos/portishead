@@ -6,7 +6,7 @@ defmodule PortisheadService.Schema.Common do
       @derive {Jason.Encoder, except: [:__meta__]}
       @primary_key {:uuid, :binary_id, autogenerate: true}
       @foreign_key_type :binary_id
-      # @schema_prefix "public"
+      @schema_prefix "premarcos"
       # @timestamps_opts [inserted_at: :created_at]
     end
   end
@@ -15,7 +15,7 @@ defmodule PortisheadService.Schema.Common do
   defmacro common_fields do
     quote do
       # field :created_at, :utc_datetime_usec, autogenerate: {Ecto.Schema, DateTime.utc_now(), []}
-      field :some_field, :string
+      field :metadata, :json
     end
   end
 end

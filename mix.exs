@@ -61,10 +61,10 @@ defmodule Portishead.MixProject do
       "ecto.migrate": ["ecto.migrate --log-sql"],
       "ecto.setup": [
         "ecto.create",
-        "ecto.load --skip-if-loaded",
+        # "ecto.load --skip-if-loaded",
         "ecto.migrate"
       ],
-      # "ecto.seed": ["run priv/repo/seeds.exs"],
+      "ecto.seed": ["run priv/repo/seeds.exs"],
       "ecto.reset": ["ecto.drop", "ecto.setup"],
       test: ["ecto.drop", "ecto.create --quiet", "ecto.migrate", "test"]
     ]
