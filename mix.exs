@@ -5,7 +5,7 @@ defmodule Portishead.MixProject do
     [
       app: :portishead,
       version: "0.1.0",
-      elixir: "~> 1.9",
+      elixir: ">= 1.9.0",
       elixirc_paths: elixirc_paths(Mix.env()),
       compilers: [:phoenix, :gettext] ++ Mix.compilers(),
       start_permanent: Mix.env() == :prod,
