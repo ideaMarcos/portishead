@@ -3,8 +3,9 @@ defmodule Portishead.Repo.Migrations.CreateSongTable do
 
   def change do
     create table(:song) do
-      add :title, :string
-      add :band_uuid, references(:band, column: :uuid)
+      add :title, :string, null: false
+      add :band_uuid, references(:band, column: :uuid), null: false
+      add :external_id, :uuid, null: false
 
       add :metadata, :json
       timestamps()

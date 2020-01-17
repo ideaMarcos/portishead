@@ -3,7 +3,7 @@ defmodule Portishead.Repo.Migrations.CreateBandTable do
 
   def change do
     create table(:band) do
-      add :name, :string
+      add :name, :string, null: false
       add :hometown, :string
 
       add :metadata, :json

@@ -15,7 +15,7 @@ config :portishead,
   mix_env: Mix.env()
 
 config :portishead, Portishead.Repo,
-  migration_primary_key: [name: :uuid, type: :binary_id],
+  migration_primary_key: [name: :uuid, type: :uuid],
   migration_default_prefix: "premarcos"
 
 # Configures the endpoint
