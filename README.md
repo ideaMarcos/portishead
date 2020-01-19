@@ -4,7 +4,7 @@
 
 docker-compose up --build
 
-docker-compose down --rmi all
+docker-compose down --rmi local
 
 docker system prune -af
 

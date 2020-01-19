@@ -12,5 +12,9 @@ done
 
 >&2 echo "Postgres is up - executing command"
 
+./bin/portishead eval "Portishead.Release.migrations"
+>&2 echo "start migrate"
 ./bin/portishead eval "Portishead.Release.migrate"
+>&2 echo "end migrate"
+./bin/portishead eval "Portishead.Release.migrations"
 ./bin/portishead start
