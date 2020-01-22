@@ -16,7 +16,7 @@ defmodule Portishead.Release do
       Ecto.Migrator.with_repo(repo, &Ecto.Migrator.run(&1, :down, to: version, log: :debug))
   end
 
-  def migrations() do
+  def migrations do
     for repo <- repos() do
       case Ecto.Migrator.with_repo(repo, &Ecto.Migrator.migrations(&1)) do
         {:ok, repo_status, _} ->
