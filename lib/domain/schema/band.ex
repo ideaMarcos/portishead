@@ -14,7 +14,7 @@ defmodule Portishead.Schema.Band do
     #   params
     #   |> Enum.reject(fn {_, v} -> is_nil(v) or v == "" end)
     #   |> Enum.into(%{})
-    
+
     record
     |> cast(params, [:name, :hometown, :external_id])
     |> validate_required([:uuid, :name])
