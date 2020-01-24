@@ -21,7 +21,9 @@ defmodule PortisheadWeb.Router do
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", PortisheadWeb do
-  #   pipe_through :api
-  # end
+  scope "/api", PortisheadWeb do
+    pipe_through :api
+
+    resources "/band", CatalogController, only: [:index]
+  end
 end

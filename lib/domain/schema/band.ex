@@ -1,5 +1,5 @@
-defmodule PortisheadService.Schema.Band do
-  use PortisheadService.Schema.Common
+defmodule Portishead.Schema.Band do
+  use Portishead.Schema.Common
 
   schema "band" do
     field :name, :string

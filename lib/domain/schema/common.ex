@@ -1,4 +1,4 @@
-defmodule PortisheadService.Schema.Common do
+defmodule Portishead.Schema.Common do
   # https://github.com/phoenixframework/phoenix/issues/2910
   defmacro __using__(_) do
     quote do
