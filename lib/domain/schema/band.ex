@@ -15,7 +15,7 @@ defmodule Portishead.Schema.Band do
     #   |> Enum.into(%{})
 
     record
-    |> cast(params, [:name, :hometown, :metadata])
+    |> cast(params, [:uuid, :name, :hometown, :metadata])
     |> validate_required([:uuid, :name])
     |> validate_length(:name, max: 255)
     |> validate_length(:hometown, max: 255)
