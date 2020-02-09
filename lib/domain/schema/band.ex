@@ -8,9 +8,16 @@ defmodule Portishead.Schema.Band do
     common_fields()
   end
 
-  def changeset(%__MODULE__{} = band, params \\ %{}) do
-    band
+  def changeset(%__MODULE__{} = record, params \\ %{}) do
+    # changes =
+    #   params
+    #   |> Enum.reject(fn {_, v} -> is_nil(v) or v == "" end)
+    #   |> Enum.into(%{})
+
+    record
     |> cast(params, [:name, :hometown, :metadata])
-    |> validate_required([:name])
+    |> validate_required([:uuid, :name])
+    |> validate_length(:name, max: 255)
+    |> validate_length(:hometown, max: 255)
   end
 end
