@@ -23,4 +23,5 @@ services:
       - DB_USER=postgres
       - DB_PWD=postgres
       - DB_HOST=postgres
+      # - DB_HOST=host.docker.internal
       - SECRET_KEY_BASE=mysecret

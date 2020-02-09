@@ -4,6 +4,7 @@ defmodule Portishead.Schema.Common do
     quote do
       use Ecto.Schema
       import Ecto.Changeset
+      import Portishead.Schema.Common
 
       @derive {Jason.Encoder, except: [:__meta__]}
       @primary_key {:uuid, :binary_id, autogenerate: true}
@@ -17,7 +18,8 @@ defmodule Portishead.Schema.Common do
   defmacro common_fields do
     quote do
       # field :created_at, :utc_datetime_usec, autogenerate: {Ecto.Schema, DateTime.utc_now(), []}
-      field :metadata, :json
+      field :metadata, :string
+      timestamps()
     end
   end
 end

@@ -1,7 +1,11 @@
 defmodule PortisheadWeb.CatalogController do
   use PortisheadWeb, :controller
 
+  alias Portishead.Catalog
+  alias PortisheadWeb.BandView
+
   def index(conn, _params) do
-    render(conn, "index.html")
+    bands = Catalog.list_bands()
+    render(conn, BandView, "bands.json", bands: bands)
   end
 end
