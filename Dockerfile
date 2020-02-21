@@ -25,6 +25,7 @@ RUN cd assets/ && \
 FROM alpine:latest
 ENV HOME=/opt/app
 
+EXPOSE $PORT
 WORKDIR $HOME
 
 RUN \
