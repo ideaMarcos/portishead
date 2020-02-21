@@ -9,7 +9,7 @@ jobs:
     name: OTP ${{ matrix.otp }} | Elixir ${{ matrix.elixir }} | Node ${{ matrix.node }} | OS ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu]
+        os: [ubuntu-18.04]
         otp: [22.x]
         elixir: [1.9.x]
         node: [13.x]
