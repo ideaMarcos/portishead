@@ -9,14 +9,14 @@ jobs:
     name: OTP ${{ matrix.otp }} | Elixir ${{ matrix.elixir }} | Node ${{ matrix.node }} | OS ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-18.04]
+        os: [alpine]
         otp: [22.x]
         elixir: [1.9.x]
-        node: [12.x]
+        node: [13.x]
 
     services:
       db:
-        image: postgres:11
+        image: postgres:alpine
         ports: ["5432:5432"]
         options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
 
