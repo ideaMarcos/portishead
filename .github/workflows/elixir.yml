@@ -45,7 +45,7 @@ jobs:
           mix compile
           mix format --check-formatted
           mix credo --strict
-          mix sobelow -i Config.Headers --exit
+          mix sobelow -i Config.HTTPS --exit
           mix test
         env:
           MIX_ENV: test
