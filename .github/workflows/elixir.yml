@@ -9,7 +9,7 @@ jobs:
     name: OTP ${{ matrix.otp }} | Elixir ${{ matrix.elixir }} | Node ${{ matrix.node }} | OS ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-18.04]
+        os: [ubuntu-latest]
         otp: [22.x]
         elixir: [1.9.x]
         node: [13.x]
@@ -45,6 +45,7 @@ jobs:
           mix compile
           mix format --check-formatted
           mix credo --strict
+          mix sobelow -i Config.Headers --exit
           mix test
         env:
           MIX_ENV: test
