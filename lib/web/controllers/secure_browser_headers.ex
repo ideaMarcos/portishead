@@ -5,17 +5,7 @@ defmodule PortisheadWeb.SecureBrowserHeaders do
   def init(opts), do: opts
 
   def call(conn, _opts) do
-    environment = Application.get_env(:portishead, :mix_env)
-
-    conn
-    |> put_resp_headers(environment)
-  end
-
-  defp put_resp_headers(conn, :test),
-    do: conn
-
-  defp put_resp_headers(conn, _) do
-    csp = Application.get_env(:portishead, :content_security_policy)
+    csp = Application.get_env(:portishead, :content_security_policy, "default-src 'self'")
     x_frame_options = Application.get_env(:portishead, :x_frame_options)
 
     conn
