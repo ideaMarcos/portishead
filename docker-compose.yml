@@ -1,4 +1,4 @@
-version: "3"
+version: "3.3"
 services:
   postgres:
     image: postgres:alpine
@@ -6,8 +6,6 @@ services:
       - POSTGRES_DB=portishead
       - POSTGRES_PASSWORD=postgres
       - POSTGRES_USER=postgres
-    networks:
-      - backend
 
   traefik:
     image: traefik
@@ -18,19 +16,16 @@ services:
       # - --log.level=DEBUG
     ports:
       - "80:80"
+      - "8080:8080"
     volumes:
       - "/var/run/docker.sock:/var/run/docker.sock:ro"
     labels:
       - "traefik.http.routers.traefik.entrypoints=web"
       - "traefik.http.routers.traefik.rule=Host(`traefik.docker.localhost`)"
       - "traefik.http.routers.traefik.service=api@internal"
-    networks:
-      - web
 
   portishead:
     build: .
-    ports:
-      - "4000:4000"
     depends_on:
       - postgres
     entrypoint:
@@ -39,22 +34,14 @@ services:
     command:
       - ./migrate-then-start.sh
     environment:
-      - PORT=4000
+      - PORT=8181
       - DB_USER=postgres
       - DB_PWD=postgres
       - DB_HOST=postgres
       # - DB_HOST=host.docker.internal
       - SECRET_KEY_BASE=mysecret
     labels:
-      - "traefik.http.routers.portishead.entrypoints=web"
       - "traefik.http.routers.portishead.rule=Host(`portishead.docker.localhost`)"
-      - "traefik.http.services.portishead.loadbalancer.server.port=4000"
-    networks:
-      - web
-      - backend
-
-networks:
-  web:
-  backend:
-# Let's Encrypt (http://portishead.docker.localhost/)
-# Dashboard [api@internal] (http://traefik.docker.localhost/)
+      - "traefik.http.services.portishead.loadbalancer.server.port=8181"
+# http://portishead.docker.localhost/
+# Dashboard [api@internal] http://traefik.docker.localhost/
