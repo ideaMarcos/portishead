@@ -1,6 +1,8 @@
 FROM bitwalker/alpine-elixir-phoenix:latest AS build
 ENV MIX_ENV=prod
 
+RUN elixir -v
+
 # install mix dependencies
 ADD mix.exs mix.lock ./
 RUN mix do deps.get --only prod, deps.compile
