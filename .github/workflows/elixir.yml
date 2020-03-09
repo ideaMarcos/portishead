@@ -1,4 +1,3 @@
-# https://www.richardtaylor.dev/articles/elixir-phoenix-release-workflow-github-ci
 name: Elixir CI
 
 on: push
