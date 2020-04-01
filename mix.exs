@@ -34,10 +34,10 @@ defmodule Portishead.MixProject do
   defp deps do
     [
       {:cors_plug, "~> 2.0"},
-      {:credo, "~> 1.2", only: [:dev, :test], runtime: false},
-      {:ecto_sql, "~> 3.3"},
+      {:credo, "~> 1.3", only: [:dev, :test], runtime: false},
+      {:ecto_sql, "~> 3.4"},
       {:gettext, "~> 0.17"},
-      {:jason, "~> 1.1"},
+      {:jason, "~> 1.2"},
       {:phoenix, "~> 1.4"},
       {:phoenix_ecto, "~> 4.1"},
       {:phoenix_html, "~> 2.14"},
