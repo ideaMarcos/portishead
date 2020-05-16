@@ -23,7 +23,7 @@ config :portishead, PortisheadWeb.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "gIttBcgpBYUp80l7GVqVDG8vBJBIG9+9fw3/291tQ2xnsmSeRwi3y4wrPGl2uR2+",
   render_errors: [view: PortisheadWeb.ErrorView, accepts: ~w(html json)],
-  pubsub: [name: Portishead.PubSub, adapter: Phoenix.PubSub.PG2]
+  pubsub_server: [name: Portishead.PubSub]
 
 # Configures Elixir's Logger
 config :logger, :console,

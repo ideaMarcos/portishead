@@ -38,11 +38,11 @@ defmodule Portishead.MixProject do
       {:ecto_sql, "~> 3.4"},
       {:gettext, "~> 0.18"},
       {:jason, "~> 1.2"},
-      {:phoenix, "~> 1.4"},
+      {:phoenix, "~> 1.5"},
       {:phoenix_ecto, "~> 4.1"},
       {:phoenix_html, "~> 2.14"},
       {:phoenix_live_reload, "~> 1.2", only: :dev},
-      {:phoenix_pubsub, "~> 1.1"},
+      {:phoenix_pubsub, "~> 2.0"},
       {:plug_cowboy, "~> 2.2"},
       {:postgrex, ">= 0.0.0"},
       {:sobelow, ">= 0.0.0", only: [:dev, :test], runtime: false}
