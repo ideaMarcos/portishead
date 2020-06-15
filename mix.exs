@@ -43,7 +43,7 @@ defmodule Portishead.MixProject do
       {:phoenix_html, "~> 2.14"},
       {:phoenix_live_reload, "~> 1.2", only: :dev},
       {:phoenix_pubsub, "~> 2.0"},
-      {:plug_cowboy, "~> 2.2"},
+      {:plug_cowboy, "~> 2.3"},
       {:postgrex, ">= 0.0.0"},
       {:sobelow, ">= 0.0.0", only: [:dev, :test], runtime: false}
     ]
