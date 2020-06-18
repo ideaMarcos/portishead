@@ -3,7 +3,7 @@ defmodule Portishead.Schema.Band do
 
   schema "band" do
     field :name, :string
-    field :hometown, :string
+    field :country_code, :string
 
     common_fields()
   end
@@ -15,9 +15,9 @@ defmodule Portishead.Schema.Band do
     #   |> Enum.into(%{})
 
     record
-    |> cast(params, [:uuid, :name, :hometown, :metadata])
+    |> cast(params, [:uuid, :name, :country_code, :metadata])
     |> validate_required([:uuid, :name])
     |> validate_length(:name, max: 255)
-    |> validate_length(:hometown, max: 255)
+    |> validate_length(:country_code, max: 255)
   end
 end

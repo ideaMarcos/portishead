@@ -8,7 +8,7 @@ defmodule PortisheadWeb.BandView do
   def render("band.json", %{band: band}) do
     %{
       name: band.name,
-      hometown: band.hometown,
+      country_code: band.country_code,
       inserted_at: band.inserted_at,
       updated_at: band.updated_at
     }
