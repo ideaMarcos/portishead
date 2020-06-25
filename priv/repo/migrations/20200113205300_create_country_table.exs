@@ -7,6 +7,8 @@ defmodule Portishead.Repo.Migrations.CreateCountryTable do
       add :name, :string, null: false
     end
 
+    create index(:country, ["lower(code)"], name: :country_index, unique: true)
+
     flush()
 
     directory = Application.app_dir(:portishead, "priv/repo")

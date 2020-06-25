@@ -24,6 +24,7 @@ defmodule PortisheadWeb.Router do
   scope "/api", PortisheadWeb do
     pipe_through :api
 
-    resources "/band", CatalogController, only: [:index]
+    resources "/band", BandController, only: [:index]
+    resources "/country", CountryController, only: [:index]
   end
 end

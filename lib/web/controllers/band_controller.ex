@@ -1,4 +1,4 @@
-defmodule PortisheadWeb.CatalogController do
+defmodule PortisheadWeb.BandController do
   use PortisheadWeb, :controller
 
   action_fallback PortisheadWeb.ApiFallbackController

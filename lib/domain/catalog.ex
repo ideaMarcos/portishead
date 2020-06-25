@@ -3,9 +3,12 @@ defmodule Portishead.Catalog do
 
   alias Portishead.Repo
   alias Portishead.Schema.Band
+  alias Portishead.Schema.Country
 
   def list_bands do
-    Repo.all(Band)
+    Band
+    |> order_by(:name)
+    |> Repo.all()
   end
 
   def get_band!(id), do: Repo.get!(Band, id)
@@ -28,5 +31,11 @@ defmodule Portishead.Catalog do
 
   def change_band(%Band{} = band) do
     Band.changeset(band, %{})
+  end
+
+  def list_countries do
+    Country
+    |> order_by(:name)
+    |> Repo.all()
   end
 end
