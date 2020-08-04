@@ -36,7 +36,7 @@ services:
     environment:
       - PORT=8181
       - DB_USER=postgres
-      - DB_PWD=postgres
+      - DB_PASSWORD=postgres
       - DB_HOST=postgres
       # - DB_HOST=host.docker.internal
       - SECRET_KEY_BASE=mysecret

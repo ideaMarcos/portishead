@@ -5,7 +5,7 @@ RUN elixir -v
 
 # install mix dependencies
 ADD mix.exs mix.lock ./
-RUN mix do deps.get --only prod, deps.compile
+RUN mix do deps.get --only $MIX_ENV, deps.compile
 
 # Same with npm deps
 ADD assets/package.json assets/

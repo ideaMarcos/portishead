@@ -8,6 +8,6 @@ config :portishead, PortisheadWeb.Endpoint,
 config :portishead, Portishead.Repo,
   pool_size: String.to_integer(System.get_env("POOL_SIZE") || "10"),
   username: System.fetch_env!("DB_USER"),
-  password: System.fetch_env!("DB_PWD"),
+  password: System.fetch_env!("DB_PASSWORD"),
   database: "portishead",
   hostname: System.fetch_env!("DB_HOST")
