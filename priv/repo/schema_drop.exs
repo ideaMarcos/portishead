@@ -1,7 +1,6 @@
 alias Portishead.Repo
 
 vals = Application.get_env(:portishead, Repo)
-
 schema = vals[:migration_default_prefix]
 migration_table = vals[:migration_source]
 
