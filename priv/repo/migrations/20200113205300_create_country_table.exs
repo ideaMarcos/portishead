@@ -18,7 +18,7 @@ defmodule Portishead.Repo.Migrations.CreateCountryTable do
 
   defp import_people_from(filepath) do
     sql = """
-      COPY premarcos.country (code, name)
+      COPY portishead.country (code, name)
       FROM STDIN
       WITH DELIMITER ',' CSV HEADER
     """

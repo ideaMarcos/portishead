@@ -4,7 +4,7 @@ defmodule Portishead.Schema.Country do
   @derive {Jason.Encoder, except: [:__meta__]}
   @primary_key {:code, :string, []}
   @foreign_key_type :string
-  @schema_prefix "premarcos"
+  @schema_prefix "portishead"
 
   schema "country" do
     field :name, :string

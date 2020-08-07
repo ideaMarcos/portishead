@@ -9,7 +9,7 @@ defmodule Portishead.Schema.Common do
       @derive {Jason.Encoder, except: [:__meta__]}
       @primary_key {:uuid, :binary_id, autogenerate: true}
       @foreign_key_type :binary_id
-      @schema_prefix "premarcos"
+      @schema_prefix "portishead"
       # @timestamps_opts [inserted_at: :created_at]
     end
   end

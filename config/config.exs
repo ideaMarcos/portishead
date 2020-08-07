@@ -16,7 +16,8 @@ config :portishead,
 
 config :portishead, Portishead.Repo,
   migration_primary_key: [name: :uuid, type: :uuid],
-  migration_default_prefix: "premarcos"
+  migration_default_prefix: "portishead",
+  migration_source: "portishead_schema_migrations"
 
 # Configures the endpoint
 config :portishead, PortisheadWeb.Endpoint,
