@@ -59,14 +59,14 @@ defmodule Portishead.MixProject do
     [
       compile: ["compile --warnings-as-errors"],
       "ecto.migrate": ["ecto.migrate --log-sql"],
-      "ecto.drop": ["run priv/repo/schema_reset.exs"],
+      "ecto.schema.drop": ["run priv/repo/schema_drop.exs"],
       "ecto.setup": [
         "ecto.create",
         # "ecto.load --skip-if-loaded",
         "ecto.migrate"
       ],
       "ecto.seed": ["run priv/repo/seeds.exs"],
-      "ecto.reset": ["ecto.drop", "ecto.setup"],
+      "ecto.reset": ["ecto.schema.drop", "ecto.setup"],
       test: ["ecto.drop", "ecto.create --quiet", "ecto.migrate", "test"]
     ]
   end
