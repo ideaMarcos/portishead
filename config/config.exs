@@ -15,6 +15,7 @@ config :portishead,
   mix_env: Mix.env()
 
 config :portishead, Portishead.Repo,
+  pool_size: String.to_integer(System.get_env("POOL_SIZE", "10")),
   migration_primary_key: [name: :uuid, type: :uuid],
   migration_default_prefix: "portishead",
   migration_source: "portishead_schema_migrations"
