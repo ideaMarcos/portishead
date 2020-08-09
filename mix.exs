@@ -66,7 +66,8 @@ defmodule Portishead.MixProject do
         "ecto.migrate"
       ],
       "ecto.seed": ["run priv/repo/seeds.exs"],
-      "ecto.reset": ["ecto.schema.drop", "ecto.setup"],
+      "ecto.schema.reset": ["ecto.schema.drop", "ecto.setup"],
+      "ecto.reset": ["ecto.drop", "ecto.setup"],
       test: ["ecto.drop", "ecto.create --quiet", "ecto.migrate", "test"]
     ]
   end
