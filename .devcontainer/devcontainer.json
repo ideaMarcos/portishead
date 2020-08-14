@@ -25,9 +25,11 @@
 	],
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	"forwardPorts": [
-		8181,
-		9000
+		// 4000
 	],
+	"containerEnv": {
+		"DB_HOST": "host.docker.internal"
+	},
 	// Use 'postCreateCommand' to run commands after the container is created.
 	// "postCreateCommand": "uname -a",
 	// Uncomment when using a ptrace-based debugger like C++, Go, and Rust

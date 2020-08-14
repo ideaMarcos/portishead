@@ -2,10 +2,10 @@ use Mix.Config
 
 # Configure your database
 config :portishead, Portishead.Repo,
-  username: "postgres",
-  password: "postgres",
-  database: "postgres",
-  hostname: "localhost",
+  username: System.get_env("DB_USER", "postgres"),
+  password: System.get_env("DB_PASSWORD", "postgres"),
+  database: System.get_env("DB_NAME", "postgres"),
+  hostname: System.get_env("DB_HOST", "localhost"),
   show_sensitive_data_on_connection_error: true
 
 # For development, we disable any cache and enable
