@@ -45,7 +45,9 @@ defmodule Portishead.MixProject do
       {:phoenix_pubsub, "~> 2.0"},
       {:plug_cowboy, "~> 2.3"},
       {:postgrex, ">= 0.0.0"},
-      {:sobelow, ">= 0.0.0", only: [:dev, :test], runtime: false}
+      {:sobelow, ">= 0.0.0", only: [:dev, :test], runtime: false},
+      {:telemetry_metrics, "~> 0.5"},
+      {:telemetry_poller, "~> 0.5"}
     ]
   end
 

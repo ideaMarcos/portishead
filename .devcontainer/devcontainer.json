@@ -21,11 +21,11 @@
 		"ms-azuretools.vscode-docker",
 		"pgourlain.erlang",
 		"redhat.vscode-yaml",
-		"tyriar.sort-lines"
+		"tyriar.sort-lines",
 	],
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	"forwardPorts": [
-		// 4000
+		4000
 	],
 	"containerEnv": {
 		"DB_HOST": "host.docker.internal"

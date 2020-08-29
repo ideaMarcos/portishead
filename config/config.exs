@@ -17,7 +17,7 @@ config :portishead,
 config :portishead, Portishead.Repo,
   pool_size: String.to_integer(System.get_env("POOL_SIZE", "10")),
   migration_primary_key: [name: :uuid, type: :uuid],
-  migration_default_prefix: "portishead",
+  migration_default_prefix: System.get_env("DB_SCHEMA", "portishead"),
   migration_source: "portishead_schema_migrations"
 
 # Configures the endpoint
