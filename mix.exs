@@ -5,7 +5,7 @@ defmodule Portishead.MixProject do
     [
       app: :portishead,
       version: "0.1.0",
-      elixir: ">= 1.9.0",
+      elixir: ">= 1.10.0",
       elixirc_paths: elixirc_paths(Mix.env()),
       compilers: [:phoenix, :gettext] ++ Mix.compilers(),
       start_permanent: Mix.env() == :prod,
@@ -39,10 +39,8 @@ defmodule Portishead.MixProject do
       {:gettext, "~> 0.18"},
       {:jason, "~> 1.2"},
       {:phoenix, "~> 1.5"},
-      {:phoenix_ecto, "~> 4.1"},
+      {:phoenix_ecto, "~> 4.2"},
       {:phoenix_html, "~> 2.14"},
-      {:phoenix_live_reload, "~> 1.2", only: :dev},
-      {:phoenix_pubsub, "~> 2.0"},
       {:plug_cowboy, "~> 2.3"},
       {:postgrex, ">= 0.0.0"},
       {:sobelow, ">= 0.0.0", only: [:dev, :test], runtime: false},
@@ -52,7 +50,7 @@ defmodule Portishead.MixProject do
   end
 
   # Aliases are shortcuts or tasks specific to the current project.
-  # For example, to create, migrate and run the seeds file at once:
+  # For example, to install project dependencies and perform other setup tasks, run:
   #
   #     $ mix ecto.setup
   #

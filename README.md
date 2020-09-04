@@ -2,4 +2,11 @@
 
 # Portishead
 
-Sample started project
+
+## Docker stuff
+
+docker-compose up --build
+
+docker-compose down --rmi local
+
+docker system prune --volumes -f

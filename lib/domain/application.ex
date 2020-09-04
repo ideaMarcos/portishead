@@ -12,7 +12,7 @@ defmodule Portishead.Application do
       # Start the Telemetry supervisor
       PortisheadWeb.Telemetry,
       # Start the PubSub system
-      # {Phoenix.PubSub, name: Portishead.PubSub},
+      {Phoenix.PubSub, name: Portishead.PubSub},
       # Start the Endpoint (http/https)
       PortisheadWeb.Endpoint
       # Start a worker by calling: Portishead.Worker.start_link(arg)

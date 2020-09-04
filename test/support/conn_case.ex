@@ -12,7 +12,7 @@ defmodule PortisheadWeb.ConnCase do
   are reverted at the end of every test. If you are using
   PostgreSQL, you can even run database tests asynchronously
   by setting `use PortisheadWeb.ConnCase, async: true`, although
-  this option is not recommendded for other databases.
+  this option is not recommended for other databases.
   """
 
   use ExUnit.CaseTemplate
@@ -22,6 +22,7 @@ defmodule PortisheadWeb.ConnCase do
       # Import conveniences for testing with connections
       import Plug.Conn
       import Phoenix.ConnTest
+      import PortisheadWeb.ConnCase
       alias PortisheadWeb.Router.Helpers, as: Routes
 
       # The default endpoint for testing

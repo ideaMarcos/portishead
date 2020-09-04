@@ -8,10 +8,9 @@
 use Mix.Config
 
 config :portishead,
+  namespace: Portishead,
   ecto_repos: [Portishead.Repo],
-  generators: [binary_id: true]
-
-config :portishead,
+  generators: [binary_id: true],
   mix_env: Mix.env()
 
 config :portishead, Portishead.Repo,
