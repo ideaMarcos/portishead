@@ -34,8 +34,6 @@ RUN \
     apk update && \
     apk --no-cache --update add \
     curl \
-    ncurses \
-    openssl \
     postgresql-client \
     tini
 
