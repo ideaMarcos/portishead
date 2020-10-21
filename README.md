@@ -9,4 +9,4 @@ docker-compose up --build
 
 docker-compose down --rmi local
 
-docker system prune --volumes -f
+docker system prune --all --volumes --force
