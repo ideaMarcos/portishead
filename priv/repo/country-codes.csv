@@ -1,6 +1,6 @@
-code,name
-GBR,United Kingdom of Great Britain and Northern Ireland
-TZA,United Republic of Tanzania
-UMI,United States Minor Outlying Islands
-USA,United States of America
-VIR,United States Virgin Islands
+code,name,x,y,z
+GBR,United Kingdom of Great Britain and Northern Ireland,x1,y1,z1
+TZA,United Republic of Tanzania,x2,y2,z2
+UMI,United States Minor Outlying Islands,x3,y3,z3
+USA,United States of America,x4,y4,z4
+VIR,United States Virgin Islands,x5,y5,z5

@@ -16,17 +16,26 @@ defmodule Portishead.Repo.Migrations.CreateCountryTable do
     import_people_from(file_path)
   end
 
-  defp import_people_from(filepath) do
+  defp import_people_from(file_path) do
     sql = """
       COPY portishead.country (code, name)
       FROM STDIN
-      WITH DELIMITER ',' CSV HEADER
+      WITH (FORMAT CSV)
     """
 
     stream = Ecto.Adapters.SQL.stream(Portishead.Repo, sql)
 
     Portishead.Repo.transaction(fn ->
-      File.stream!(filepath)
+      file_path
+      |> File.stream!()
+      |> CSV.decode!(headers: true)
+      |> Stream.map(fn row ->
+        [
+          row["code"],
+          row["name"]
+        ]
+      end)
+      |> CSV.encode()
       |> Enum.into(stream)
     end)
   end

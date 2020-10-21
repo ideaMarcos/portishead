@@ -35,16 +35,16 @@ defmodule Portishead.MixProject do
     [
       {:cors_plug, "~> 2.0"},
       {:credo, "~> 1.4", only: [:dev, :test], runtime: false},
-      {:ecto_sql, "~> 3.4"},
+      {:ecto_sql, "~> 3.5"},
       {:gettext, "~> 0.18"},
       {:jason, "~> 1.2"},
       {:phoenix, "~> 1.5"},
       {:phoenix_ecto, "~> 4.2"},
       {:phoenix_html, "~> 2.14"},
-      {:plug_cowboy, "~> 2.3"},
+      {:plug_cowboy, "~> 2.4"},
       {:postgrex, ">= 0.0.0"},
       {:sobelow, ">= 0.0.0", only: [:dev, :test], runtime: false},
-      {:telemetry_metrics, "~> 0.5"},
+      {:telemetry_metrics, "~> 0.6"},
       {:telemetry_poller, "~> 0.5"}
     ]
   end
