@@ -35,6 +35,7 @@ defmodule Portishead.MixProject do
     [
       {:cors_plug, "~> 2.0"},
       {:credo, "~> 1.4", only: [:dev, :test], runtime: false},
+      {:csv, "~> 2.4"},
       {:ecto_sql, "~> 3.5"},
       {:gettext, "~> 0.18"},
       {:jason, "~> 1.2"},
