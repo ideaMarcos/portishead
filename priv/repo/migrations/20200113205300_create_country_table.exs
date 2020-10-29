@@ -13,10 +13,10 @@ defmodule Portishead.Repo.Migrations.CreateCountryTable do
 
     directory = Application.app_dir(:portishead, "priv/repo")
     file_path = Path.join(directory, "country-codes.csv")
-    import_people_from(file_path)
+    import_from(file_path)
   end
 
-  defp import_people_from(file_path) do
+  defp import_from(file_path) do
     sql = """
       COPY portishead.country (code, name)
       FROM STDIN
