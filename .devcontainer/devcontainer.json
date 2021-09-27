@@ -1,27 +1,30 @@
-// For format details, see https://aka.ms/vscode-remote/devcontainer.json or this file's README at:
-// https://github.com/microsoft/vscode-dev-containers/tree/v0.128.0/containers/alpine
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.194.0/containers/docker-existing-dockerfile
 {
-	"name": "Elixir Sample",
-	"build": {
-		"dockerfile": "./Dockerfile",
-		// "args": { "VARIANT": "3.12" }
-	},
-	// Set *default* container specific settings.json values on container create. 
-	"settings": {
-		"terminal.integrated.shell.linux": "/bin/bash"
-	},
+	"name": "Existing Dockerfile",
+	// Sets the run context to one level up instead of the .devcontainer folder.
+	"context": "..",
+	// Update the 'dockerFile' property if you aren't using the standard 'Dockerfile' filename.
+	"dockerFile": "./Dockerfile",
+	// Set *default* container specific settings.json values on container create.
+	"settings": {},
 	// Add the IDs of extensions you want installed when the container is created.
-	// Note that some extensions may not work in Alpine Linux. See https://aka.ms/vscode-remote/linux.
 	"extensions": [
-		"codezombiech.gitignore",
-		"dotjoshjohnson.xml",
-		"eamodio.gitlens",
-		"jakebecker.elixir-ls",
-		"mechatroner.rainbow-csv",
+		"akamud.vscode-theme-onelight",
+		"bungcip.better-toml",
 		"ms-azuretools.vscode-docker",
+		"editorconfig.editorconfig",
+		"jakebecker.elixir-ls",
 		"pgourlain.erlang",
-		"redhat.vscode-yaml",
+		"codezombiech.gitignore",
+		"eamodio.gitlens",
+		"phoenixframework.phoenix",
+		"mechatroner.rainbow-csv",
 		"tyriar.sort-lines",
+		"gruntfuggly.todo-tree",
+		"vscode-icons-team.vscode-icons",
+		"dotjoshjohnson.xml",
+		"redhat.vscode-yaml"
 	],
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	"forwardPorts": [
@@ -30,14 +33,12 @@
 	"containerEnv": {
 		"DB_HOST": "host.docker.internal"
 	},
-	// Use 'postCreateCommand' to run commands after the container is created.
-	// "postCreateCommand": "uname -a",
+	// Uncomment the next line to run commands after the container is created - for example installing curl.
+	// "postCreateCommand": "apt-get update && apt-get install -y curl",
 	// Uncomment when using a ptrace-based debugger like C++, Go, and Rust
-	"runArgs": [
-		"--cap-add=SYS_PTRACE",
-		"--security-opt",
-		"seccomp=unconfined"
-	],
-	// Uncomment to connect as a non-root user. See https://aka.ms/vscode-remote/containers/non-root.
+	// "runArgs": [ "--cap-add=SYS_PTRACE", "--security-opt", "seccomp=unconfined" ],
+	// Uncomment to use the Docker CLI from inside the container. See https://aka.ms/vscode-remote/samples/docker-from-docker.
+	// "mounts": [ "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind" ],
+	// Uncomment to connect as a non-root user if you've added one. See https://aka.ms/vscode-remote/containers/non-root.
 	// "remoteUser": "vscode"
 }
