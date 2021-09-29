@@ -12,19 +12,19 @@
 	"extensions": [
 		"akamud.vscode-theme-onelight",
 		"bungcip.better-toml",
-		"ms-azuretools.vscode-docker",
-		"editorconfig.editorconfig",
-		"jakebecker.elixir-ls",
-		"pgourlain.erlang",
 		"codezombiech.gitignore",
-		"eamodio.gitlens",
-		"phoenixframework.phoenix",
-		"mechatroner.rainbow-csv",
-		"tyriar.sort-lines",
-		"gruntfuggly.todo-tree",
-		"vscode-icons-team.vscode-icons",
 		"dotjoshjohnson.xml",
-		"redhat.vscode-yaml"
+		"eamodio.gitlens",
+		"editorconfig.editorconfig",
+		"gruntfuggly.todo-tree",
+		"jakebecker.elixir-ls",
+		"mechatroner.rainbow-csv",
+		"ms-azuretools.vscode-docker",
+		"pgourlain.erlang",
+		"phoenixframework.phoenix",
+		"redhat.vscode-yaml",
+		"tyriar.sort-lines",
+		"vscode-icons-team.vscode-icons"
 	],
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	"forwardPorts": [
